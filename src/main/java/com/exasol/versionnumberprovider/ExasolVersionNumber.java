@@ -17,7 +17,7 @@ class ExasolVersionNumber implements Comparable<ExasolVersionNumber> {
 
     /**
      * Create a new instance of {@link ExasolVersionNumber}.
-     * 
+     *
      * @param versionNumberString version number to wrap
      */
     ExasolVersionNumber(final String versionNumberString) {
@@ -66,5 +66,23 @@ class ExasolVersionNumber implements Comparable<ExasolVersionNumber> {
     @Override
     public String toString() {
         return this.versionNumberString;
+    }
+
+    /**
+     * Get the MAJOR version.
+     *
+     * @return integer MAJOR of version string "MAJOR.MINOR.FIX(suffix)"
+     */
+    public int getMajorVersion() {
+        return major;
+    }
+
+    /**
+     * Get the MINOR version.
+     *
+     * @return integer MINOR of version string "MAJOR.MINOR.FIX(suffix)"
+     */
+    public int getMinorVersion() {
+        return minor;
     }
 }

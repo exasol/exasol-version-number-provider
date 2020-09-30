@@ -37,6 +37,11 @@
             <organizationUrl>https://www.exasol.com/</organizationUrl>
         </developer>
     </developers>
+    <scm>
+        <connection>scm:git:https://github.com/exasol/exasol-version-number-provider.git</connection>
+        <developerConnection>scm:git:https://github.com/exasol/exasol-version-number-provider.git</developerConnection>
+        <url>https://github.com/exasol/exasol-version-number-provider/tree/master</url>
+    </scm>
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -208,6 +213,40 @@
                                 </requireMavenVersion>
                             </rules>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <charset>UTF-8</charset>
+                    <doclint/>
+                    <serialwarn>false</serialwarn><!-- Serial annotation is introduced with Java 14. -->
+                    <failOnError>true</failOnError>
+                    <failOnWarnings>true</failOnWarnings>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>

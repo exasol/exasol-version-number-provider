@@ -29,14 +29,14 @@ class ExasolVersionNumberTest {
                 if (release1 == release2) {
                     continue;
                 }
-                assertNotReleasesEqual(release1, release2);
+                assertReleasesNotEqual(release1, release2);
             }
         }
     }
 
     @Test
     void testOtherClassIsNotEqual() {
-        assertNotReleasesEqual(RELEASE_600, new Object());
+        assertReleasesNotEqual(RELEASE_600, new Object());
     }
 
     @Test
@@ -72,7 +72,7 @@ class ExasolVersionNumberTest {
         );
     }
 
-    void assertNotReleasesEqual(final Object release1, final Object release2) {
+    void assertReleasesNotEqual(final Object release1, final Object release2) {
         assertAll(//
                 () -> assertThat(release1.equals(release2), not(equalTo(true))),
                 () -> assertThat(release1.hashCode(), not(equalTo(release2.hashCode())))//

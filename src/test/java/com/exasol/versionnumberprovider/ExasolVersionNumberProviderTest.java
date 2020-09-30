@@ -12,7 +12,7 @@ class ExasolVersionNumberProviderTest {
     @Test
     void testGetLatest() throws IOException {
         final ExasolVersionNumberProvider versionNumberProvider = new LocalExasolVersionNumberProviderFactory()
-                .getForLocalDockerGubResponseDump();
+                .getLocalDockerHubResponseDump();
         assertThat(versionNumberProvider.getLatestReleaseNumber(), equalTo("7.0.2"));
     }
 }

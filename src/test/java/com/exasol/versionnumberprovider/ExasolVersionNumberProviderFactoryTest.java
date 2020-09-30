@@ -11,9 +11,8 @@ class ExasolVersionNumberProviderFactoryTest {
 
     @Test
     void test() throws IOException {
-        new ExasolVersionNumberProviderFactory();
         final ExasolVersionNumberProvider versionNumberProvider = new ExasolVersionNumberProviderFactory()
                 .buildExasolVersionNumberProvider();
-        assertThat(versionNumberProvider.getAllReleaseNumbers(), hasItems("7.0.0"));
+        assertThat(versionNumberProvider.getAllReleaseNumbers(), hasItems("7.0.0", "7.0.1", "7.0.2"));
     }
 }

@@ -55,7 +55,7 @@ class ExasolVersionNumberProvider {
     }
 
     /**
-     * Get the latest release in the given major.minor branch
+     * Get the latest release in the given major.minor branch.
      *
      * @param majorReleaseNumber Integer major release number, eg. (6) or (7)
      * @param minorReleaseNumber Integer minor release number, eg (0), (1), (2), ...

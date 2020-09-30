@@ -78,6 +78,8 @@ class ExasolVersionNumber implements Comparable<ExasolVersionNumber> {
     }
 
     /**
+     * Get the MINOR version.
+     *
      * @return integer MINOR of version string "MAJOR.MINOR.FIX(suffix)"
      */
     public int getMinorVersion() {

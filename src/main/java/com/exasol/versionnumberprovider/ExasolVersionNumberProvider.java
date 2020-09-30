@@ -34,6 +34,8 @@ public class ExasolVersionNumberProvider {
      * Instead of using latest, this ensures that your computer will actively fetch the latest version and not use the
      * latest installed one.
      * </p>
+     * 
+     * @return latest release number
      */
     public String getLatestReleaseNumber() {
         return this.allReleases.get(this.allReleases.size() - 1).toString();

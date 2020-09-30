@@ -12,7 +12,7 @@ import javax.json.JsonArray;
  */
 class ExasolVersionNumberProvider {
     private static final Pattern DOCKER_IMAGE_VERSION_PATTERN = Pattern
-            .compile( "(\\d+)(?:\\.(\\d+))?(?:\\.(\\d+))?(?:-d(\\d+))?" );
+            .compile("(\\d+)(?:\\.(\\d+))?(?:\\.(\\d+))?(?:-d(\\d+))?");
     private final List<ExasolVersionNumber> allReleases;
 
     /**
@@ -24,11 +24,10 @@ class ExasolVersionNumberProvider {
      *
      * @param dockerHubTagDescription tag description from docker-hub API
      */
-    ExasolVersionNumberProvider( final JsonArray dockerHubTagDescription ) {
-        this.allReleases = dockerHubTagDescription.stream().map( release -> release.asJsonObject().getString( "name" ) )
-                                                  .filter( tag -> !tag.startsWith( "latest" ) )
-                                                  .map( ExasolVersionNumber::new ).sorted()
-                                                  .collect( Collectors.toList() );
+    ExasolVersionNumberProvider(final JsonArray dockerHubTagDescription) {
+        this.allReleases = dockerHubTagDescription.stream().map(release -> release.asJsonObject().getString("name"))
+                .filter(tag -> !tag.startsWith("latest")).map(ExasolVersionNumber::new).sorted()
+                .collect(Collectors.toList());
     }
 
     /**
@@ -40,9 +39,8 @@ class ExasolVersionNumberProvider {
      * </p>
      */
     public String getLatestReleaseNumber() {
-        return this.allReleases.get( this.allReleases.size() - 1 ).toString();
+        return this.allReleases.get(this.allReleases.size() - 1).toString();
     }
-
 
     /**
      * Get the latest release in the given major branch
@@ -51,10 +49,9 @@ class ExasolVersionNumberProvider {
      * @return Latest version with that major
      * @throws java.util.NoSuchElementException if the major does not match anything
      */
-    public ExasolVersionNumber getLatestReleaseForMajor( int majorReleaseNumber ) {
-        return this.allReleases.stream().filter( version -> version.getMajorVersion() == majorReleaseNumber ).max(
-                Comparator.naturalOrder()
-        ).orElseThrow();
+    public ExasolVersionNumber getLatestReleaseForMajor(int majorReleaseNumber) {
+        return this.allReleases.stream().filter(version -> version.getMajorVersion() == majorReleaseNumber)
+                .max(Comparator.naturalOrder()).orElseThrow();
     }
 
     /**
@@ -65,14 +62,12 @@ class ExasolVersionNumberProvider {
      * @return Latest version with that major.minor
      * @throws java.util.NoSuchElementException if the major.minor does not match anything
      */
-    public ExasolVersionNumber getLatestReleaseForMinor( int majorReleaseNumber, int minorReleaseNumber ) {
-        return this.allReleases.stream().filter( version ->
-                version.getMajorVersion() == majorReleaseNumber
-                        && version.getMinorVersion() == minorReleaseNumber
-        ).max( Comparator.naturalOrder() )
-                               .orElseThrow();
+    public ExasolVersionNumber getLatestReleaseForMinor(int majorReleaseNumber, int minorReleaseNumber) {
+        return this.allReleases.stream()
+                .filter(version -> version.getMajorVersion() == majorReleaseNumber
+                        && version.getMinorVersion() == minorReleaseNumber)
+                .max(Comparator.naturalOrder()).orElseThrow();
     }
-
 
     /**
      * Get a list of all available releases.
@@ -80,6 +75,6 @@ class ExasolVersionNumberProvider {
      * @return list of all available releases
      */
     public List<String> getAllReleaseNumbers() {
-        return this.allReleases.stream().map( ExasolVersionNumber::toString ).collect( Collectors.toList() );
+        return this.allReleases.stream().map(ExasolVersionNumber::toString).collect(Collectors.toList());
     }
 }

@@ -2,7 +2,6 @@ package com.exasol.versionnumberprovider;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import javax.json.JsonArray;
@@ -10,9 +9,7 @@ import javax.json.JsonArray;
 /**
  * This class gives you access to the available Exasol docker-db version numbers.
  */
-class ExasolVersionNumberProvider {
-    private static final Pattern DOCKER_IMAGE_VERSION_PATTERN = Pattern
-            .compile("(\\d+)(?:\\.(\\d+))?(?:\\.(\\d+))?(?:-d(\\d+))?");
+public class ExasolVersionNumberProvider {
     private final List<ExasolVersionNumber> allReleases;
 
     /**
@@ -49,9 +46,9 @@ class ExasolVersionNumberProvider {
      * @return Latest version with that major
      * @throws java.util.NoSuchElementException if the major does not match anything
      */
-    public ExasolVersionNumber getLatestReleaseForMajor(int majorReleaseNumber) {
+    public String getLatestReleaseForMajor(final int majorReleaseNumber) {
         return this.allReleases.stream().filter(version -> version.getMajorVersion() == majorReleaseNumber)
-                .max(Comparator.naturalOrder()).orElseThrow();
+                .max(Comparator.naturalOrder()).orElseThrow().toString();
     }
 
     /**
@@ -62,11 +59,11 @@ class ExasolVersionNumberProvider {
      * @return Latest version with that major.minor
      * @throws java.util.NoSuchElementException if the major.minor does not match anything
      */
-    public ExasolVersionNumber getLatestReleaseForMinor(int majorReleaseNumber, int minorReleaseNumber) {
+    public String getLatestReleaseForMinor(final int majorReleaseNumber, final int minorReleaseNumber) {
         return this.allReleases.stream()
                 .filter(version -> version.getMajorVersion() == majorReleaseNumber
                         && version.getMinorVersion() == minorReleaseNumber)
-                .max(Comparator.naturalOrder()).orElseThrow();
+                .max(Comparator.naturalOrder()).orElseThrow().toString();
     }
 
     /**

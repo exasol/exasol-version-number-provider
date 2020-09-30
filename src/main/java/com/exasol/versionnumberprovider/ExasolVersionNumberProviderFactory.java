@@ -18,7 +18,7 @@ public class ExasolVersionNumberProviderFactory {
     private static final String TAGS_API_ENDPOINT = "https://registry.hub.docker.com/v1/repositories/exasol/docker-db/tags";
 
     /**
-     * Build an {@link ExasolVersionNumberProvider} using a teg list from docker hub.
+     * Build an {@link ExasolVersionNumberProvider} using a tag list from docker hub.
      * 
      * @return built {@link ExasolVersionNumberProvider}.
      * @throws IOException if connection failed

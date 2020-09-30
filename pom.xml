@@ -6,7 +6,7 @@
     <artifactId>exasol-version-number-provider</artifactId>
     <version>0.1.0</version>
     <name>exasol-version-number-provider</name>
-    <description>Tool that always provices you the most recent version of the exasol docker-db.</description>
+    <description>Tool that always provides you the most recent version of the Exasol docker-db.</description>
     <url>https://github.com/exasol/exasol-version-number-provider</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

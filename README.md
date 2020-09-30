@@ -26,6 +26,8 @@ final ExasolVersionNumberProvider versionNumberProvider = new ExasolVersionNumbe
 versionNumberProvider.getLatestReleaseNumber();
 ```
 
+You can also get the latest version for a specific major or minor release using `getLatestReleaseForMajor(...)` or `getLatestReleaseForMinor(...)`. 
+
 ## Installation
 
 Click on maven central badge (on the top of this page), select version and copy the dependency declaration for your build system.

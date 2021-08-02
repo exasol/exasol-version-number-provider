@@ -8,6 +8,8 @@ import java.net.URL;
 import javax.json.Json;
 import javax.json.JsonReader;
 
+import com.exasol.errorreporting.ExaError;
+
 /**
  * Factory for {@link ExasolVersionNumberProvider}.
  * <p>
@@ -28,8 +30,9 @@ public class ExasolVersionNumberProviderFactory {
                 final JsonReader jsonReader = Json.createReader(inputStream)) {
             return new ExasolVersionNumberProvider(jsonReader.readArray());
         } catch (final MalformedURLException exception) {
-            // should never happen, since ExasolVersionNumberProvider is well formed
-            throw new IllegalStateException("Internal error.", exception);
+            throw new IllegalStateException(ExaError.messageBuilder("F-EVNP-2")
+                    .message("Something went wrong while creating an ExasolVersionNumberProvider").ticketMitigation()
+                    .toString(), exception);
         }
     }
 }

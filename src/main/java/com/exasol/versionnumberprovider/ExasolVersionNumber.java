@@ -4,6 +4,8 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.exasol.errorreporting.ExaError;
+
 /**
  * This class represents Exasol docker-db version numbers.
  */
@@ -24,7 +26,8 @@ class ExasolVersionNumber implements Comparable<ExasolVersionNumber> {
         this.versionNumberString = versionNumberString;
         final Matcher matcher = DOCKER_IMAGE_VERSION_PATTERN.matcher(versionNumberString);
         if (!matcher.matches()) {
-            throw new IllegalStateException("Unsupported release tag: " + versionNumberString);
+            throw new IllegalStateException(ExaError.messageBuilder("E-EVNP-1")
+                    .message("Unsupported release tag: {{tag}}.", versionNumberString).toString());
         }
         this.major = Integer.parseInt(matcher.group(1));
         this.minor = Integer.parseInt(matcher.group(2));
@@ -74,7 +77,7 @@ class ExasolVersionNumber implements Comparable<ExasolVersionNumber> {
      * @return integer MAJOR of version string "MAJOR.MINOR.FIX(suffix)"
      */
     public int getMajorVersion() {
-        return major;
+        return this.major;
     }
 
     /**
@@ -83,6 +86,6 @@ class ExasolVersionNumber implements Comparable<ExasolVersionNumber> {
      * @return integer MINOR of version string "MAJOR.MINOR.FIX(suffix)"
      */
     public int getMinorVersion() {
-        return minor;
+        return this.minor;
     }
 }

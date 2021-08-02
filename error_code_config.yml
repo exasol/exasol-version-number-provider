@@ -1,0 +1,4 @@
+error-tags:
+  EVNP:
+    packages:
+      - com.exasol.versionnumberprovider

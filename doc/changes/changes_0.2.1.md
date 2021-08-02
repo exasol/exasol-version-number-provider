@@ -12,7 +12,7 @@ In this release we updated the dependencies. By that we fixed transitive CVE-202
 
 * Updated `org.junit.jupiter:junit-jupiter-engine:5.6.2` to `5.7.2`
 * Updated `org.junit.jupiter:junit-jupiter-params:5.6.2` to `5.7.2`
-* Updated `org.junit.platform:junit-platform-runner:1.6.2` to `1.7.2`
+* Removed `org.junit.platform:junit-platform-runner:1.6.2`
 
 ### Plugin Dependency Updates
 

@@ -17,6 +17,9 @@ In this release we updated the dependencies. By that we fixed transitive CVE-202
 ### Plugin Dependency Updates
 
 * Added `com.exasol:error-code-crawler-maven-plugin:0.5.1`
+* Added `com.exasol:project-keeper-maven-plugin:0.10.0`
 * Added `io.github.zlika:reproducible-build-maven-plugin:0.13`
+* Added `org.apache.maven.plugins:maven-failsafe-plugin:3.0.0-M3`
 * Updated `org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M3` to `3.0.0-M5`
 * Updated `org.jacoco:jacoco-maven-plugin:0.8.5` to `0.8.7`
+* Added `org.sonatype.plugins:nexus-staging-maven-plugin:1.6.8`

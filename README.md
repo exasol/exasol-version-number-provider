@@ -1,6 +1,7 @@
 # Exasol Version Number Provider
 
 [![Build Status](https://github.com/exasol/exasol-version-number-provider/actions/workflows/ci-build.yml/badge.svg)](https://github.com/exasol/exasol-version-number-provider/actions/workflows/ci-build.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/com.exasol/exasol-version-number-provider)](https://search.maven.org/artifact/com.exasol/exasol-version-number-provider)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aexasol-version-number-provider&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.exasol%3Aexasol-version-number-provider)
 

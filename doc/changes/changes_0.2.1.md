@@ -8,6 +8,10 @@ In this release we updated the dependencies. By that we fixed transitive CVE-202
 
 ## Dependency Updates
 
+### Compile Dependency Updates
+
+* Added `com.exasol:error-reporting-java:0.4.0`
+
 ### Test Dependency Updates
 
 * Updated `org.junit.jupiter:junit-jupiter-engine:5.6.2` to `5.7.2`

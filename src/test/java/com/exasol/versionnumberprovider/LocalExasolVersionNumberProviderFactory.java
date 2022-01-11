@@ -3,8 +3,8 @@ package com.exasol.versionnumberprovider;
 import java.io.IOException;
 import java.io.InputStream;
 
-import javax.json.Json;
-import javax.json.JsonReader;
+import jakarta.json.Json;
+import jakarta.json.JsonReader;
 
 public class LocalExasolVersionNumberProviderFactory {
 

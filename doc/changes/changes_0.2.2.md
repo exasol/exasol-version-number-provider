@@ -1,4 +1,4 @@
-# exasol-version-number-provider 0.2.2, released 2021-01-11
+# exasol-version-number-provider 0.2.2, released 2022-01-11
 
 Code name: Dependency Updates
 

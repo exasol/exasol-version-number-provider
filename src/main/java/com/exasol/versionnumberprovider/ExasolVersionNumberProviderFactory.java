@@ -5,8 +5,8 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import javax.json.Json;
-import javax.json.JsonReader;
+import jakarta.json.Json;
+import jakarta.json.JsonReader;
 
 import com.exasol.errorreporting.ExaError;
 

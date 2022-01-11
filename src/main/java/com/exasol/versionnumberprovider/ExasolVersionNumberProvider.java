@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.json.JsonArray;
+import jakarta.json.JsonArray;
 
 /**
  * This class gives you access to the available Exasol docker-db version numbers.

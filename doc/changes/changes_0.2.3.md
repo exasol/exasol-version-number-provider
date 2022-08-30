@@ -12,6 +12,11 @@ This release fixes the code example in the readme file.
 
 ## Dependency Updates
 
+### Compile Dependency Updates
+
+* Updated `com.exasol:error-reporting-java:0.4.0` to `0.4.1`
+* Updated `jakarta.json:jakarta.json-api:2.0.1` to `2.1.1`
+
 ### Test Dependency Updates
 
 * Updated `org.junit.jupiter:junit-jupiter-engine:5.7.2` to `5.9.0`

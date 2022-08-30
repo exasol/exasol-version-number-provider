@@ -30,7 +30,7 @@ This release fixes the code example in the readme file.
 * Updated `org.apache.maven.plugins:maven-compiler-plugin:3.8.1` to `3.10.1`
 * Updated `org.apache.maven.plugins:maven-deploy-plugin:2.7` to `3.0.0-M1`
 * Updated `org.apache.maven.plugins:maven-enforcer-plugin:3.0.0-M3` to `3.1.0`
-* Updated `org.apache.maven.plugins:maven-failsafe-plugin:3.0.0-M3` to `3.0.0-M5`
+* Removed `org.apache.maven.plugins:maven-failsafe-plugin:3.0.0-M3`
 * Updated `org.apache.maven.plugins:maven-gpg-plugin:1.6` to `3.0.1`
 * Updated `org.apache.maven.plugins:maven-javadoc-plugin:3.2.0` to `3.4.0`
 * Added `org.codehaus.mojo:flatten-maven-plugin:1.2.7`

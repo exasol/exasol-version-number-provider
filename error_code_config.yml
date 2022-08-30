@@ -2,3 +2,4 @@ error-tags:
   EVNP:
     packages:
       - com.exasol.versionnumberprovider
+    highest-index: 2

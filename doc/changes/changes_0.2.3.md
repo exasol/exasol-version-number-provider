@@ -1,6 +1,6 @@
 # exasol-version-number-provider 0.2.3, released 2022-08-30
 
-Code name: Adapt Code Example
+Code name: Updates for Code Example and Dependencies
 
 ## Summary
 

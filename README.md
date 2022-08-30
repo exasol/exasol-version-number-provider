@@ -20,8 +20,9 @@ This java package gives you access to the latest available Exasol docker-db vers
 ## Usage
 
 ```java
-final ExasolVersionNumberProvider versionNumberProvider=new ExasolVersionNumberProviderFactory().getExasolVersionNumberProvider();
-        versionNumberProvider.getLatestReleaseNumber();
+ExasolVersionNumberProvider versionNumberProvider
+  = new ExasolVersionNumberProviderFactory().buildExasolVersionNumberProvider();
+String latestVersion = versionNumberProvider.getLatestReleaseNumber();
 ```
 
 You can also get the latest version for a specific major or minor release using `getLatestReleaseForMajor(...)` or `getLatestReleaseForMinor(...)`.

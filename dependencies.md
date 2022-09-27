@@ -6,7 +6,7 @@
 | Dependency                       | License                                                                                                      |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | [Jakarta JSON Processing API][0] | [Eclipse Public License 2.0][1]; [GNU General Public License, version 2 with the GNU Classpath Exception][2] |
-| [error-reporting-java][3]        | [MIT][4]                                                                                                     |
+| [error-reporting-java][3]        | [MIT License][4]                                                                                             |
 
 ## Test Dependencies
 
@@ -51,8 +51,8 @@
 [0]: https://github.com/eclipse-ee4j/jsonp
 [1]: https://projects.eclipse.org/license/epl-2.0
 [2]: https://projects.eclipse.org/license/secondary-gpl-2.0-cp
-[3]: https://github.com/exasol/error-reporting-java
-[4]: https://opensource.org/licenses/MIT
+[3]: https://github.com/exasol/error-reporting-java/
+[4]: https://github.com/exasol/error-reporting-java/blob/main/LICENSE
 [5]: http://hamcrest.org/JavaHamcrest/
 [6]: http://opensource.org/licenses/BSD-3-Clause
 [7]: https://junit.org/junit5/

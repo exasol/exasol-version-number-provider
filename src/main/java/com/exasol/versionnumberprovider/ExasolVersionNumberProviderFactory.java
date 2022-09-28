@@ -1,14 +1,9 @@
 package com.exasol.versionnumberprovider;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.util.List;
 
-import jakarta.json.Json;
-import jakarta.json.JsonReader;
-
-import com.exasol.errorreporting.ExaError;
+import com.exasol.versionnumberprovider.dockerhub.DockerhubClient;
+import com.exasol.versionnumberprovider.dockerhub.Tag;
 
 /**
  * Factory for {@link ExasolVersionNumberProvider}.
@@ -17,22 +12,13 @@ import com.exasol.errorreporting.ExaError;
  * </p>
  */
 public class ExasolVersionNumberProviderFactory {
-    private static final String TAGS_API_ENDPOINT = "https://registry.hub.docker.com/v1/repositories/exasol/docker-db/tags";
-
     /**
      * Build an {@link ExasolVersionNumberProvider} using a tag list from docker hub.
      * 
      * @return built {@link ExasolVersionNumberProvider}.
-     * @throws IOException if connection failed
      */
-    public ExasolVersionNumberProvider buildExasolVersionNumberProvider() throws IOException {
-        try (final InputStream inputStream = new URL(TAGS_API_ENDPOINT).openStream();
-                final JsonReader jsonReader = Json.createReader(inputStream)) {
-            return new ExasolVersionNumberProvider(jsonReader.readArray());
-        } catch (final MalformedURLException exception) {
-            throw new IllegalStateException(ExaError.messageBuilder("F-EVNP-2")
-                    .message("Something went wrong while creating an ExasolVersionNumberProvider").ticketMitigation()
-                    .toString(), exception);
-        }
+    public ExasolVersionNumberProvider buildExasolVersionNumberProvider() {
+        final List<Tag> allTags = new DockerhubClient().getAllTags();
+        return new ExasolVersionNumberProvider(allTags);
     }
 }

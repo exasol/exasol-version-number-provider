@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import jakarta.json.JsonArray;
+import com.exasol.versionnumberprovider.dockerhub.Tag;
 
 /**
  * This class gives you access to the available Exasol docker-db version numbers.
@@ -19,11 +19,18 @@ public class ExasolVersionNumberProvider {
      * Package-private since it is built by the {@link ExasolVersionNumberProviderFactory}
      * </p>
      *
-     * @param dockerHubTagDescription tag description from docker-hub API
+     * @param allTags all tag descriptions from docker-hub API
      */
-    ExasolVersionNumberProvider(final JsonArray dockerHubTagDescription) {
-        this.allReleases = dockerHubTagDescription.stream().map(release -> release.asJsonObject().getString("name"))
-                .filter(tag -> !tag.startsWith("latest")).map(ExasolVersionNumber::new).sorted()
+    ExasolVersionNumberProvider(final List<Tag> allTags) {
+        this.allReleases = extractVersions(allTags);
+    }
+
+    private static List<ExasolVersionNumber> extractVersions(final List<Tag> allTags) {
+        return allTags.stream() //
+                .map(Tag::getName) //
+                .filter(tag -> !tag.startsWith("latest")) //
+                .map(ExasolVersionNumber::new) //
+                .sorted() //
                 .collect(Collectors.toList());
     }
 

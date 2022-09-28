@@ -6,6 +6,8 @@ Code name: Fix Dockerhub access
 
 In this release we fixed the access to the Dockerhub API. Docker removed the deprecated `v1` API so we updated to `v2`. Thanks to [@exaSR](https://github.com/exaSR) for reporting this!
 
+Please note that the new Dockerhub API requires sending multiple requests in order to retrieve all tags. That's why creating a new `ExasolVersionNumberProvider` with `ExasolVersionNumberProviderFactory.buildExasolVersionNumberProvider()` takes a bit longer now.
+
 ## Features
 
 * #13: Fixed access to Dockerhub API
@@ -15,6 +17,11 @@ In this release we fixed the access to the Dockerhub API. Docker removed the dep
 ### Compile Dependency Updates
 
 * Updated `com.exasol:error-reporting-java:0.4.1` to `1.0.0`
+* Added `jakarta.json.bind:jakarta.json.bind-api:3.0.0`
+
+### Runtime Dependency Updates
+
+* Added `org.eclipse:yasson:3.0.2`
 
 ### Test Dependency Updates
 

@@ -22,7 +22,7 @@ class DeserializerTest {
 
     @Test
     void deserialize() throws IOException {
-        final TagList actual = deserialize(Paths.get("src/test/resources/dockerhub_response.json"));
+        final TagListPage actual = deserialize(Paths.get("src/test/resources/dockerhub_response.json"));
         assertAll(
                 () -> assertThat("next url", actual.getNextUrl(),
                         equalTo("https://registry.hub.docker.com/v2/repositories/exasol/docker-db/tags?page=2")),
@@ -30,7 +30,7 @@ class DeserializerTest {
                 () -> assertThat("tag 0", actual.getTags().get(0).getName(), equalTo("latest")));
     }
 
-    private TagList deserialize(final Path path) throws IOException {
+    private TagListPage deserialize(final Path path) throws IOException {
         return deserializer.deserialize(Files.readString(path));
     }
 }

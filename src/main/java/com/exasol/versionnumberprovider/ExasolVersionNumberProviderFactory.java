@@ -3,7 +3,7 @@ package com.exasol.versionnumberprovider;
 import java.util.List;
 
 import com.exasol.versionnumberprovider.dockerhub.DockerhubClient;
-import com.exasol.versionnumberprovider.dockerhub.TagList.Tag;
+import com.exasol.versionnumberprovider.dockerhub.Tag;
 
 /**
  * Factory for {@link ExasolVersionNumberProvider}.

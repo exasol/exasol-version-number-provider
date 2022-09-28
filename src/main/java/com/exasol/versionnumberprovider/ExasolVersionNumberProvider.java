@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.exasol.versionnumberprovider.dockerhub.TagList.Tag;
+import com.exasol.versionnumberprovider.dockerhub.Tag;
 
 /**
  * This class gives you access to the available Exasol docker-db version numbers.

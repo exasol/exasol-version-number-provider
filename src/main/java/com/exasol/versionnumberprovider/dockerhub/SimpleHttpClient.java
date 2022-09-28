@@ -8,6 +8,9 @@ import java.net.http.HttpResponse.BodyHandlers;
 
 import com.exasol.errorreporting.ExaError;
 
+/**
+ * This HTTP client simplifies Java's {@link HttpClient} API and only allows {@code GET} for a URL.
+ */
 class SimpleHttpClient {
 
     private final HttpClient client;
@@ -18,6 +21,12 @@ class SimpleHttpClient {
                 .build();
     }
 
+    /**
+     * Execute a {@code GET} request using the given URL and return the response body as a {@link String}.
+     * 
+     * @param url URL to request.
+     * @return response body
+     */
     String getUrl(final URI url) {
         final HttpRequest request = HttpRequest.newBuilder(url).GET().build();
         try {

@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import com.exasol.versionnumberprovider.dockerhub.TagList.Tag;
-
 /**
  * This class uses the Docker Hub API to retrieve all tags for the Exasol docker-db image.
  * <p>
@@ -34,18 +32,18 @@ public class DockerhubClient {
      * 
      * @return all tags.
      */
-    public List<TagList.Tag> getAllTags() {
+    public List<Tag> getAllTags() {
         final List<Tag> tags = new ArrayList<>();
         String nextUrl = INITIAL_URL;
         do {
-            final TagList tagList = getTagList(nextUrl);
+            final TagListPage tagList = getTagList(nextUrl);
             tags.addAll(tagList.getTags());
             nextUrl = tagList.getNextUrl();
         } while (nextUrl != null);
         return tags;
     }
 
-    private TagList getTagList(final String url) {
+    private TagListPage getTagList(final String url) {
         LOGGER.finest(() -> "Fetching tag list " + url);
         final String response = httpClient.getUrl(URI.create(url));
         return deserializer.deserialize(response);

@@ -6,7 +6,7 @@ Code name: Fixed broken link
 
 Fixed broken link
 
-## Features
+## Bugfixes
 
 * #15: Fixed broken link to Eclipse Json-B API license
 

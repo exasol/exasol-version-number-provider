@@ -4,3 +4,4 @@ sources:
     modules:
       - maven_central
 linkReplacements:
+  - https://eclipse-ee4j.github.io/jsonb-api|https://github.com/jakartaee/jsonb-api

@@ -2,6 +2,7 @@ package com.exasol.versionnumberprovider;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import com.exasol.versionnumberprovider.dockerhub.Tag;
@@ -11,6 +12,7 @@ import com.exasol.versionnumberprovider.dockerhub.Tag;
  */
 public class ExasolVersionNumberProvider {
     private final List<ExasolVersionNumber> allReleases;
+    private static final Pattern PRE_RELEASE_PATTERN = Pattern.compile(".{0,40}(?:prerelease|alpha|beta|rc).{0,40}");
 
     /**
      * Create a new instance of {@link ExasolVersionNumberProvider}.
@@ -28,10 +30,14 @@ public class ExasolVersionNumberProvider {
     private static List<ExasolVersionNumber> extractVersions(final List<Tag> allTags) {
         return allTags.stream() //
                 .map(Tag::getName) //
-                .filter(tag -> !tag.startsWith("latest")) //
+                .filter(ExasolVersionNumberProvider::isIncludedTag) //
                 .map(ExasolVersionNumber::new) //
                 .sorted() //
                 .collect(Collectors.toList());
+    }
+
+    private static boolean isIncludedTag(final String tag) {
+        return !(tag.startsWith("latest") || PRE_RELEASE_PATTERN.matcher(tag).matches());
     }
 
     /**

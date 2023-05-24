@@ -12,7 +12,7 @@ import com.exasol.versionnumberprovider.dockerhub.Tag;
  */
 public class ExasolVersionNumberProvider {
     private final List<ExasolVersionNumber> allReleases;
-    private static final Pattern PRE_RELEASE_PATTERN = Pattern.compile(".*(?:prerelease|alpha|beta|rc).*");
+    private static final Pattern PRE_RELEASE_PATTERN = Pattern.compile(".{0,40}(?:prerelease|alpha|beta|rc).{0,40}");
 
     /**
      * Create a new instance of {@link ExasolVersionNumberProvider}.

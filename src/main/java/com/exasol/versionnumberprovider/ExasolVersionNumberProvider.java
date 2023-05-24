@@ -28,7 +28,8 @@ public class ExasolVersionNumberProvider {
     private static List<ExasolVersionNumber> extractVersions(final List<Tag> allTags) {
         return allTags.stream() //
                 .map(Tag::getName) //
-                .filter(tag -> !tag.startsWith("latest")) //
+                .filter(tag -> !(tag.startsWith("latest") || tag.contains("prerelease") || tag.contains("alpha")
+                        || tag.contains("beta") || tag.contains("rc") )) //
                 .map(ExasolVersionNumber::new) //
                 .sorted() //
                 .collect(Collectors.toList());

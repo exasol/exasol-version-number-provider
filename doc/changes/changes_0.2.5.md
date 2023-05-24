@@ -12,10 +12,18 @@ Fixed broken link
 
 ## Dependency Updates
 
+### Compile Dependency Updates
+
+* Updated `com.exasol:error-reporting-java:1.0.0` to `1.0.1`
+
+### Runtime Dependency Updates
+
+* Updated `org.eclipse:yasson:3.0.2` to `3.0.3`
+
 ### Plugin Dependency Updates
 
 * Updated `com.exasol:error-code-crawler-maven-plugin:1.1.2` to `1.2.1`
-* Updated `com.exasol:project-keeper-maven-plugin:2.8.0` to `2.9.1`
+* Updated `com.exasol:project-keeper-maven-plugin:2.8.0` to `2.9.7`
 * Updated `io.github.zlika:reproducible-build-maven-plugin:0.15` to `0.16`
 * Updated `org.apache.maven.plugins:maven-deploy-plugin:3.0.0-M1` to `3.0.0`
 * Updated `org.apache.maven.plugins:maven-javadoc-plugin:3.4.0` to `3.4.1`

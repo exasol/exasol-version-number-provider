@@ -1,7 +1,7 @@
 # Exasol Version Number Provider
 
 [![Build Status](https://github.com/exasol/exasol-version-number-provider/actions/workflows/ci-build.yml/badge.svg)](https://github.com/exasol/exasol-version-number-provider/actions/workflows/ci-build.yml)
-[![Maven Central – exasol-version-number-provider](https://img.shields.io/maven-central/v/com.exasol/exasol-version-number-provider)](https://search.maven.org/artifact/com.exasol/exasol-version-number-provider)
+[![Maven Central &ndash; exasol-version-number-provider](https://img.shields.io/maven-central/v/com.exasol/exasol-version-number-provider)](https://search.maven.org/artifact/com.exasol/exasol-version-number-provider)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.exasol%3Aexasol-version-number-provider&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.exasol%3Aexasol-version-number-provider)
 
@@ -20,12 +20,18 @@ This java package gives you access to the latest available Exasol docker-db vers
 ## Usage
 
 ```java
-ExasolVersionNumberProvider versionNumberProvider
+final ExasolVersionNumberProvider versionNumberProvider
   = new ExasolVersionNumberProviderFactory().buildExasolVersionNumberProvider();
-String latestVersion = versionNumberProvider.getLatestReleaseNumber();
+final String latestVersion = versionNumberProvider.getLatestReleaseNumber();
 ```
 
 You can also get the latest version for a specific major or minor release using `getLatestReleaseForMajor(...)` or `getLatestReleaseForMinor(...)`.
+
+### Excluded Versions
+
+Please note that pre-release versions are excluded when finding the latest version.
+
+All versions that contain the strings `prerelease`, `alpha`, `beta` or `rc` (release candidate) count as pre-releases.
 
 ## Installation
 

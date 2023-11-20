@@ -35,6 +35,13 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
+            <!-- override transitive dependency of yasson to fix vulnerability CVE-2023-4043 -->
+            <groupId>org.eclipse.parsson</groupId>
+            <artifactId>parsson</artifactId>
+            <version>1.1.5</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
             <groupId>com.exasol</groupId>
             <artifactId>error-reporting-java</artifactId>
             <version>1.0.1</version>

@@ -16,6 +16,10 @@ This release fixes vulnerability CVE-2023-4043 in test dependency `org.eclipse.p
 
 * Updated `jakarta.json:jakarta.json-api:2.1.1` to `2.1.3`
 
+### Runtime Dependency Updates
+
+* Added `org.eclipse.parsson:parsson:1.1.5`
+
 ### Test Dependency Updates
 
 * Updated `org.junit.jupiter:junit-jupiter-engine:5.9.1` to `5.10.1`

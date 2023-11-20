@@ -4,8 +4,7 @@ Code name: Prefix Support
 
 ## Summary
 
-In this release we added support for version numbers with prefixes like `prerelease-8.17.0`. Pre-releases versions are
-excluded from serving the latest version.
+In this release we added support for version numbers with prefixes like `prerelease-8.17.0`. Pre-releases versions are excluded from serving the latest version.
 
 ## Bugfixes
 

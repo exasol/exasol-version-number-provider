@@ -10,7 +10,8 @@ import com.exasol.errorreporting.ExaError;
  * This class represents Exasol docker-db version numbers.
  */
 class ExasolVersionNumber implements Comparable<ExasolVersionNumber> {
-    private static final Pattern DOCKER_IMAGE_VERSION_PATTERN = Pattern.compile("(\\d+)\\.(\\d+)\\.(\\d+)(?:-d(.+))?");
+    private static final Pattern DOCKER_IMAGE_VERSION_PATTERN = Pattern
+            .compile("(\\d+)\\.(\\d+)\\.(\\d+)(?:-d(.+))?(?:-[\\w+\\.]+)?");
     private final int major;
     private final int minor;
     private final int fix;

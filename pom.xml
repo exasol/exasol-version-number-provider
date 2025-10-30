@@ -2,13 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>exasol-version-number-provider</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>exasol-version-number-provider</name>
     <description>Tool that always provides you the most recent version of the Exasol docker-db.</description>
     <url>https://github.com/exasol/exasol-version-number-provider/</url>
-    <properties>
-        <junit.version>5.10.1</junit.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>jakarta.json</groupId>
@@ -26,19 +23,12 @@
         <dependency>
             <groupId>jakarta.json.bind</groupId>
             <artifactId>jakarta.json.bind-api</artifactId>
-            <version>3.0.0</version>
+            <version>3.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse</groupId>
             <artifactId>yasson</artifactId>
-            <version>3.0.3</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <!-- override transitive dependency of yasson to fix vulnerability CVE-2023-4043 -->
-            <groupId>org.eclipse.parsson</groupId>
-            <artifactId>parsson</artifactId>
-            <version>1.1.5</version>
+            <version>3.0.4</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -50,19 +40,14 @@
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>
-            <version>2.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
+            <version>3.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.version}</version>
+            <!-- Version 6 requires Java 17 -->
+            <version>5.13.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -71,7 +56,7 @@
             <plugin>
                 <groupId>com.exasol</groupId>
                 <artifactId>project-keeper-maven-plugin</artifactId>
-                <version>2.9.16</version>
+                <version>5.4.3</version>
                 <executions>
                     <execution>
                         <goals>
@@ -85,7 +70,7 @@
     <parent>
         <artifactId>exasol-version-number-provider-generated-parent</artifactId>
         <groupId>com.exasol</groupId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <relativePath>pk_generated_parent.pom</relativePath>
     </parent>
 </project>
